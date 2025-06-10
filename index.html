@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empathy Lens | Accessibility Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="info-btn">
+        <i class="fas fa-info"></i>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-eye"></i>
+            </div>
+            <h1>Empathy Lens</h1>
+            <p>Experience the web through different perspectives to understand accessibility challenges faced by users with disabilities.</p>
+        </header>
+
+        <div class="simulator-container">
+            <div class="controls">
+                <div class="control-group">
+                    <div class="section-title">
+                        <i class="fas fa-book"></i>
+                        <h2>Dyslexia Experience</h2>
+                    </div>
+                    <div class="toggle-switch">
+                        <span>Enable Dyslexia Simulation</span>
+                        <label class="switch">
+                            <input type="checkbox" id="dyslexiaToggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <p class="description">Simulates reading difficulties by altering text presentation.</p>
+                </div>
+
+                <div class="control-group">
+                    <div class="section-title">
+                        <i class="fas fa-palette"></i>
+                        <h2>Color Perception</h2>
+                    </div>
+                    <div class="toggle-switch">
+                        <span>Enable Color Filter</span>
+                        <label class="switch">
+                            <input type="checkbox" id="colorToggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="slider-container">
+                        <label for="colorFilter">Vision Type:</label>
+                        <select id="colorFilter">
+                            <option value="protanopia">Protanopia (Red-Weak)</option>
+                            <option value="deuteranopia">Deuteranopia (Green-Weak)</option>
+                            <option value="tritanopia">Tritanopia (Blue-Weak)</option>
+                            <option value="achromatopsia">Achromatopsia (Total Color Blindness)</option>
+                        </select>
+                    </div>
+
+                    <div class="color-palette">
+                        <div class="color-box"></div>
+                        <div class="color-box"></div>
+                        <div class="color-box"></div>
+                        <div class="color-box"></div>
+                        <div class="color-box"></div>
+                        <div class="color-box"></div>
+                    </div>
+                    <p>Notice how colors lose distinction with different filters.</p>
+                </div>
+
+                <div class="control-group">
+                    <div class="section-title">
+                        <i class="fas fa-mouse"></i>
+                        <h2>Motor Control</h2>
+                    </div>
+                    <div class="toggle-switch">
+                        <span>Enable Tremor Effect</span>
+                        <label class="switch">
+                            <input type="checkbox" id="motorToggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="slider-container">
+                        <label for="tremorIntensity">Tremor Intensity:</label>
+                        <input type="range" min="1" max="10" value="5" class="slider-range" id="tremorIntensity">
+                    </div>
+                    <p>Try clicking buttons with tremor enabled.</p>
+                </div>
+
+                <div class="control-group">
+                    <div class="section-title">
+                        <i class="fas fa-assistive-listening-systems"></i>
+                        <h2>Text-to-Speech</h2>
+                    </div>
+                    <div class="slider-container">
+                        <label>Voice Speed & Comprehension:</label>
+                        <div class="voice-levels">
+                            <div class="voice-btn" data-speed="0.7">Slow<br><small>(New User)</small></div>
+                            <div class="voice-btn active" data-speed="1.0">Normal<br><small>(Average)</small></div>
+                            <div class="voice-btn" data-speed="1.4">Fast<br><small>(Tech Savvy)</small></div>
+                            <div class="voice-btn" data-speed="1.8">Very Fast<br><small>(Expert)</small></div>
+                        </div>
+                    </div>
+                    <button id="readContent" class="btn">
+                        <i class="fas fa-play"></i> Read Content
+                    </button>
+                </div>
+            </div>
+
+            <div class="preview" id="previewArea">
+                <div class="section-title">
+                    <i class="fas fa-eye"></i>
+                    <h2>Interactive Preview</h2>
+                </div>
+                <div class="preview-content">
+                    <p>Welcome to Empathy Lens. This tool helps you experience how people with different abilities interact with digital content.</p>
+
+                    <p>By toggling the options on the left, you can simulate various accessibility challenges:</p>
+
+                    <ul>
+                        <li><strong>Dyslexia simulation</strong> creates a jumbled text experience to help understand reading difficulties.</li>
+                        <li><strong>Color perception filters</strong> demonstrate how people with color vision deficiency see your content.</li>
+                        <li><strong>Motor control simulation</strong> demonstrates the challenges faced by users with limited motor skills.</li>
+                        <li><strong>Text-to-speech</strong> helps understand different comprehension speeds.</li>
+                    </ul>
+
+                    <div class="preview-examples">
+                        <div class="example-card">
+                            <h4><i class="fas fa-exclamation-triangle"></i> Warning Alert</h4>
+                            <p>This action cannot be undone. Proceed with caution.</p>
+                            <button class="btn" style="background:linear-gradient(135deg, #ff9800, #ff5722);">
+                                <i class="fas fa-trash"></i> Delete Item
+                            </button>
+                        </div>
+
+                        <div class="example-card">
+                            <h4><i class="fas fa-check-circle"></i> Success Message</h4>
+                            <p>Your settings have been saved successfully!</p>
+                            <button class="btn" style="background:linear-gradient(135deg, #4CAF50, #2E7D32);">
+                                <i class="fas fa-check"></i> Continue
+                            </button>
+                        </div>
+                    </div>
+
+                    <p>This tool was created to promote inclusive design practices. Remember that real accessibility goes beyond simulation - always test with real users when possible.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Empathy Lens | Created by Ayush Dubey | 2025</p>
+        </div>
+    </div>
+
+    <!-- SVG Filters for Color Blindness -->
+    <svg height="0" xmlns="http://www.w3.org/2000/svg">
+        <filter id="protanopia">
+            <feColorMatrix type="matrix" values="0.567, 0.433, 0, 0, 0  0.558, 0.442, 0, 0, 0  0, 0.242, 0.758, 0, 0  0, 0, 0, 1, 0" />
+        </filter>
+        <filter id="deuteranopia">
+            <feColorMatrix type="matrix" values="0.625, 0.375, 0, 0, 0  0.7, 0.3, 0, 0, 0  0, 0.3, 0.7, 0, 0  0, 0, 0, 1, 0" />
+        </filter>
+        <filter id="tritanopia">
+            <feColorMatrix type="matrix" values="0.95, 0.05, 0, 0, 0  0, 0.433, 0.567, 0, 0  0, 0.475, 0.525, 0, 0  0, 0, 0, 1, 0" />
+        </filter>
+        <filter id="achromatopsia">
+            <feColorMatrix type="matrix" values="0.299, 0.587, 0.114, 0, 0  0.299, 0.587, 0.114, 0, 0  0.299, 0.587, 0.114, 0, 0  0, 0, 0, 1, 0" />
+        </filter>
+    </svg>
+
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close-modal"><i class="fas fa-times"></i></span>
+
+            <div class="about-section">
+                <h3><i class="fas fa-info-circle"></i> About This Project</h3>
+                <p>Empathy Lens helps developers understand accessibility challenges by simulating different conditions. This tool promotes inclusive design principles.</p>
+                <p>Built entirely with HTML, CSS, and JavaScript - no frameworks or libraries. Demonstrates modern browser APIs to create meaningful experiences.</p>
+            </div>
+
+            <div class="about-section">
+                <h3><i class="fas fa-user"></i> About the Creator</h3>
+                <div class="personal-info">
+                    <div class="avatar">AD</div>
+                    <div class="info-links">
+                        <p><strong>Ayush Dubey</strong></p>
+                        <a href="https://github.com/AyushDubey23" target="_blank">
+                            <i class="fab fa-github"></i> GitHub: AyushDubey23
+                        </a>
+                        <a href="https://ayushdubey23.github.io/mpw/" target="_blank">
+                            <i class="fas fa-globe"></i> Portfolio: ayushdubey23.github.io/mpw
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h3><i class="fas fa-lightbulb"></i> How to Use</h3>
+                <p>Toggle the switches in the control panel to activate different simulations. Combine them to experience how multiple accessibility challenges might interact.</p>
+                <p>Experiment with the intensity sliders to adjust the simulation strength. Try to navigate and read content with different settings enabled.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
